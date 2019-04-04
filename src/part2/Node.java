@@ -6,11 +6,13 @@ public class Node {
 	private Node left;
 	private Node right;
 	private double probability;// probability is set only for leaf nodes
+	private boolean isLeaf;
 
-	public Node(String bestAtt, Node l, Node r) {
+	public Node(String bestAtt, Node l, Node r,boolean isLeaf) {
 		this.left = l;
 		this.right = r;
 		this.name = bestAtt;
+		this.setLeaf(isLeaf);
 	}
 
 	/**
@@ -46,5 +48,21 @@ public class Node {
 	 */
 	public String getName() {
 		return name;
+	}
+
+	public boolean isLeaf() {
+		return isLeaf;
+	}
+
+	public void setLeaf(boolean isLeaf) {
+		this.isLeaf = isLeaf;
+	}
+
+	public double getProbability() {
+		return probability;
+	}
+
+	public void setProbability(double probability) {
+		this.probability = probability;
 	}
 }

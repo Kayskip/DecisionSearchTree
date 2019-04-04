@@ -12,7 +12,7 @@ public class Instance {
 
 	private int category;
 	private List<Boolean> values;
-
+	
 	/**
 	 * @param cat
 	 * @param s
