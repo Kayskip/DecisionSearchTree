@@ -2,7 +2,7 @@ package part2;
 
 public class Node {
 
-	private String name;
+	private String attribute;
 	private Node left;
 	private Node right;
 	private double probability;// probability is set only for leaf nodes
@@ -11,7 +11,7 @@ public class Node {
 	public Node(String bestAtt, Node l, Node r,boolean isLeaf) {
 		this.left = l;
 		this.right = r;
-		this.name = bestAtt;
+		this.setAttribute(bestAtt);
 		this.setLeaf(isLeaf);
 	}
 
@@ -43,12 +43,6 @@ public class Node {
 		return right;
 	}
 
-	/**
-	 * @return
-	 */
-	public String getName() {
-		return name;
-	}
 
 	public boolean isLeaf() {
 		return isLeaf;
@@ -65,4 +59,13 @@ public class Node {
 	public void setProbability(double probability) {
 		this.probability = probability;
 	}
+
+	public String getAttribute() {
+		return attribute;
+	}
+
+	public void setAttribute(String attribute) {
+		this.attribute = attribute;
+	}
+
 }
