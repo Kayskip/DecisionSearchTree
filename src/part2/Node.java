@@ -1,71 +1,97 @@
 package part2;
 
+/**
+ * @author karu
+ *
+ */
 public class Node {
-
 	private String attribute;
 	private Node left;
 	private Node right;
-	private double probability;// probability is set only for leaf nodes
-	private boolean isLeaf;
+	private int category;
+	private double probability;
 
-	public Node(String bestAtt, Node l, Node r,boolean isLeaf) {
-		this.left = l;
-		this.right = r;
-		this.setAttribute(bestAtt);
-		this.setLeaf(isLeaf);
+	/**
+	 * @param attribute
+	 * @param left
+	 * @param right
+	 */
+	public Node(String attribute, Node left, Node right) {
+		this.setLeftNode(left);
+		this.setRightNode(right);
+		this.setAttribute(attribute);
 	}
 
 	/**
-	 * @param n
+	 * @param node
 	 */
 	public void setLeftNode(Node n) {
 		this.left = n;
 	}
 
 	/**
-	 * @param n
+	 * @param node
 	 */
 	public void setRightNode(Node n) {
 		this.right = n;
 	}
 
 	/**
-	 * @return
+	 * @return left node
 	 */
 	public Node getLeftNode() {
 		return left;
 	}
 
 	/**
-	 * @return
+	 * @return right node
 	 */
 	public Node getRightNode() {
 		return right;
 	}
 
-
-	public boolean isLeaf() {
-		return isLeaf;
-	}
-
-	public void setLeaf(boolean isLeaf) {
-		this.isLeaf = isLeaf;
-	}
-
-	public double getProbability() {
-		return probability;
-	}
-
-	public void setProbability(double probability) {
-		this.probability = probability;
-	}
-
+	/**
+	 * @return attribute
+	 */
 	public String getAttribute() {
 		return attribute;
 	}
 
+	/**
+	 * Sets attribute safely
+	 * @param attribute
+	 */
 	public void setAttribute(String attribute) {
 		this.attribute = attribute;
+	}
+
+	/**
+	 * @return category
+	 */
+	public int getCategory() {
+		return category;
+	}
+
+	/**
+	 * Sets category safely
+	 * @param category
+	 */
+	public void setCategory(int category) {
+		this.category = category;
+	}
+
+	/**
+	 * @return probability
+	 */
+	public double getProbability() {
+		return probability;
+	}
+
+	/**
+	 * @param probability
+	 */
+	public void setProbability(double probability) {
+		this.probability = probability;
 	}
 
 }
